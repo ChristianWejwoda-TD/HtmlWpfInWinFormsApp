@@ -1,0 +1,27 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfControlsLibrary"
+             xmlns:syncfusion="http://schemas.syncfusion.com/wpf" 
+             x:Class="WpfControlsLibrary.HtmlEditor"
+             mc:Ignorable="d" 
+             Height="1150" Width="900"
+             xmlns:RichTextBoxAdv="clr-namespace:Syncfusion.Windows.Controls.RichTextBoxAdv;assembly=Syncfusion.SfRichTextBoxAdv.Wpf">
+
+    <Grid Background="#F1F1F1">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <syncfusion:SfRichTextRibbon 
+            x:Name="richTextRibbon" 
+            SnapsToDevicePixels="True" 
+            DataContext="{Binding ElementName=richTextBoxAdv}"             
+            />
+
+        <local:SfRichTextBoxAdvExtension x:Name="richTextBoxAdv" Grid.Row="2" HtmlText="{Binding HtmlText, Mode=TwoWay}" LayoutType="Continuous" EnableMiniToolBar="False" FontFamily="Arial" FontSize="12"/>
+    </Grid>
+</UserControl>
